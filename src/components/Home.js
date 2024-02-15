@@ -1,10 +1,9 @@
-    import React, { useState} from 'react';
-    import data from '../data/dummyData';
+    import React from 'react';
     import styled from 'styled-components';
-    import Search from './Generics/InputSearch';
     import CardView from './Generics/Card';
 
     const Container = styled.div`
+        margin: 80px 0px 20px 0px;
         display: grid;
         width: 100%;
         flex-direction: column;
@@ -24,8 +23,9 @@
     `
 
     const Home = ({ filteredFruits }) => {
+
         return(
-            <Container>
+            <Container> 
                 {filteredFruits.map((fruit, index) => (
                     <CardView key={index} fruit={fruit} />
                 ))}

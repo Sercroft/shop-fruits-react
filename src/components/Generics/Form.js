@@ -36,7 +36,7 @@ const Label = styled.label`
 const MsgError = styled.p`
     font-size: 12px;
     font-weight: bold;
-    color: red;
+    color: black;
     padding-left: 2px;
 `
 

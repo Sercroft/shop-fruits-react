@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import Search from './InputSearch';
@@ -6,7 +6,15 @@ import data from '../../data/dummyData';
 
 
 const NavbarContainer = styled.nav`
-    background-color: #dedede;
+    width: 98%;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0);
+    border: 3px solid rgba(255, 255, 255, 0.18);
     color: white;
     padding: 10px 20px;
     display: flex;
