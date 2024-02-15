@@ -3,7 +3,7 @@
     import CardView from './Generics/Card';
 
     const Container = styled.div`
-        margin: 80px 0px 20px 0px;
+        margin: 80px 0px 120px 0px;
         display: grid;
         width: 100%;
         flex-direction: column;
@@ -19,6 +19,7 @@
             justify-content: center;
             align-items: center;
             grid-template-columns: 1fr;
+            margin: 130px 0px 160px 0px;
         }
     `
 

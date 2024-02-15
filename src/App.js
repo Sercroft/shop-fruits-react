@@ -8,17 +8,18 @@ import data from './data/dummyData';
 import Footer from './components/Generics/Footer';
 
 function App() {
+
   const [filteredFruits, setFilteredFruits] = useState(data);
 
   return(
-    <Router>
-      <Navbar setFilteredFruits={setFilteredFruits} />
-        <Routes>
-            <Route path="/" element={<Login />} />
-            <Route path="/home" element={<Home filteredFruits={filteredFruits} />} />
-        </Routes>
-      <Footer />
-    </Router>
+  <Router>
+    <Navbar setFilteredFruits={setFilteredFruits} />
+      <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/home" element={<Home filteredFruits={filteredFruits} />} />
+      </Routes>
+    <Footer />
+  </Router>
     
   );
 }

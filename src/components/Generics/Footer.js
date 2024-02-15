@@ -2,12 +2,27 @@ import React from 'react';
 import styled from 'styled-components';
 
 const FooterContainer = styled.footer`
-    background-color: #dedede;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0);
+    border: 3px solid rgba(255, 255, 255, 0.18);
     color: black;
     padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media(max-width: 768px){
+        flex-direction: column;
+        height: 10%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
 `;
 
 const StoreName = styled.div`
@@ -16,6 +31,10 @@ const StoreName = styled.div`
     font-weight: 600;
     border: none;
     color: #070F2B;
+
+    @media(max-width: 768px){
+        font-size: 30px;
+    }
 `;
 
 const StoreInfo = styled.div`
@@ -23,6 +42,12 @@ const StoreInfo = styled.div`
     font-size: 16px;
     font-weight: bold;
     text-align: right;
+    margin-right: 40px;
+
+    @media(max-width: 768px){
+        text-align: center;
+        font-size: 14px;
+    }
 `;
 
 const Footer = () => {

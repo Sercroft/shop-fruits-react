@@ -21,10 +21,10 @@ const NavbarContainer = styled.nav`
     justify-content: space-between;
     align-items: center;
 
-    @media (max-width: 768px) {
+    @media(max-width: 768px){
         flex-direction: column;
+        width: 90%;
     }
-    
 `;
 
 const HomeButton = styled.button`
@@ -41,19 +41,6 @@ const HomeButton = styled.button`
     }
 `
 
-const ShopButton = styled.button`
-    font-family: "Nunito Sans", sans-serif;
-    background-color: transparent;
-    border: none;
-    color: #070F2B;
-    font-size: 18px;
-    cursor: pointer;
-
-    &:hover {
-        font-weight: bold;
-    }
-`;
-
 const Navbar = ({ setFilteredFruits}) => {
     const location = useLocation();
 
@@ -64,11 +51,7 @@ const Navbar = ({ setFilteredFruits}) => {
                     Shop Fruits
                 </HomeButton>
             </Link>
-            {location.pathname === '/' ? ( 
-                <ShopButton>Shop</ShopButton>
-            ) : (
-                <Search fruits={data} setFilteredFruits={setFilteredFruits} />
-            )}
+            {location.pathname !== '/' ? (<Search fruits={data} setFilteredFruits={setFilteredFruits} />) : ('')}
         </NavbarContainer>
     );
 }

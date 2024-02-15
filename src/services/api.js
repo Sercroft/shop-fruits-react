@@ -12,6 +12,9 @@ const useApi = () => {
             
             try{
                 const response = await axios.get('https://rickandmortyapi.com/api/character');
+
+                console.log(`RESPONSE API: ${response}`);
+
                 setData(response.data);
             }catch (error){
                 setError(error);
