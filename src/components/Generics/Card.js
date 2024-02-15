@@ -5,7 +5,7 @@ const ContainerCard = styled.div`
     width: 266px;
     height: 380px;
     padding: 16px;
-    background-color: ${({ backgroundColor }) => backgroundColor};
+    background-color: ${({ backgroundcolor }) => backgroundcolor};
     border-radius: 30px;
     border: 2px solid #000;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -71,8 +71,8 @@ const ContainerStockLabel = styled.div`
     margin-left: -18px;
     margin-top: -10px;
     padding: 4px;
-    background-color: ${({ hasStock }) => hasStock ? '#80558C' : '#632626'};
-    color: ${({ hasStock }) => hasStock ? '#000000' : '#ffffff'};
+    background-color: ${({ hasstock }) => hasstock ? '#80558C' : '#632626'};
+    color: ${({ hasstock }) => hasstock ? '#000000' : '#ffffff'}; 
     border-radius: 0px 0px 15px 15px;
     border: 2px solid #000;
     text-align: center;
@@ -95,12 +95,12 @@ const fruitColors = {
 
 const CardView = ({ fruit }) => {
     const { name, price, quantity_available, price_per_kg, origin, color_fruit, image } = fruit;
-    const hasStock = quantity_available > 0;
+    const isStock = quantity_available > 0;
     const fruitColor = fruitColors[color_fruit] || "#000";
 
 
     return(
-      <ContainerCard backgroundColor={fruitColor}>
+      <ContainerCard backgroundcolor={fruitColor}>
 
         <ImageContainer>
             <Image src={image} alt={name} loading="lazy"></Image>
@@ -117,8 +117,8 @@ const CardView = ({ fruit }) => {
             </InfoCard>
         </BodyCard>
 
-        <ContainerStockLabel hasStock={hasStock}>
-            {hasStock ? 
+        <ContainerStockLabel hasstock={isStock}>
+            {isStock ? 
                 <StockText>Available</StockText> 
             : 
                 <StockText>Sold out</StockText> 
